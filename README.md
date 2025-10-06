@@ -2,8 +2,6 @@
 ## 📦 專案說明
 
 本版本 (`v4`) 為針對「帳戶警示預測」任務的 **進階行為特徵強化版**，  
-整合交易紀錄的時間行為、熵特徵與通道分佈，  
-搭配 LightGBM 模型進行異常帳戶分類預測。
 
 本版本在 `v3` 基礎上進行系統性優化，  
 包含特徵工程、欠採樣平衡、閾值調整與訓練曲線紀錄功能。
@@ -11,8 +9,6 @@
 ---
 
 ## 🚀 專案流程架構
-
-```mermaid
 flowchart TD
     A[dataset/acct_transaction.csv] --> B[build_features_v4_behavior.py]
     B --> C[feature_data_v4/account_features.csv]
@@ -23,9 +19,9 @@ flowchart TD
     G --> H[predict_accounts_v4.py]
     H --> I[results_v4/predict_for_submit_v4.csv]
 
-## 🧩 特徵工程 (Feature Engineering)
 
-#🏗️ 檔案：build_features_v4_behavior.py
+## 🧩 特徵工程 (Feature Engineering)
+🏗️ 檔案：build_features_v4_behavior.py
 
 從 acct_transaction.csv 建立帳號級特徵。
 相較於 v3，本版新增 9 項行為熵與時間特徵：
@@ -45,14 +41,12 @@ flowchart TD
 
 可測 1:2, 1:3, 1:5 觀察 Recall 提升效果
 
-GPU 加速訓練
+# GPU 加速訓練
 
 安裝 RAPIDS (cuDF + LightGBM-GPU)，可加速百倍
 
-閾值微調
+# 閾值微調
 
 測試 0.3~0.7 閾值對 precision/recall 平衡影響
 
-可視化強化
 
-透過 lgb.plot_importance() 分析特徵重要度
