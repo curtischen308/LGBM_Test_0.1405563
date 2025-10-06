@@ -35,11 +35,17 @@ flowchart TD
 
 類別	特徵名稱	說明
 交易統計	txn_count, total_amt, avg_amt, max_amt, min_amt, std_amt	基本交易統計
+
 期間特徵	first_txn, last_txn, active_days, txn_per_day	交易活躍時間
+
 行為比例	night_txn_ratio, self_txn_ratio	夜間、自轉比例
+
 📆 進階行為	weekday_ratio, peak_hour_ratio	平日 / 尖峰時段比例
+
 📊 熵特徵	txn_hour_entropy, channel_entropy	時間與通道分布熵
+
 💰 金額分布	q90_over_meann, median_over_mean	高金額與分布平衡性
+
 🔁 使用習慣	most_used_channel_ratio	最常用通道佔比
 
 ## 🧠模型優化建
