@@ -26,6 +26,28 @@ flowchart TD
     
     H --> I[results_v4/predict_for_submit_v4.csv]
 
+## 📁 資料夾結構 
+AI_CUP_2025/
+├── dataset/
+│   ├── acct_transaction.csv
+│   ├── acct_alert.csv
+│   └── acct_predict.csv
+├── feature_data_v4/
+│   └── account_features.csv
+├── train_data_v4/
+│   ├── train_data.csv
+│   └── lightgbm_model.pkl
+├── results_v4/
+│   ├── predict_full_v4.csv
+│   ├── predict_for_submit_v4.csv
+│   └── training_curve.png
+└── *.py
+    ├── build_features_v4_behavior.py
+    ├── prepare_trainset_balanced_v4.py
+    ├── train_model_LGBM_v4.py
+    └── predict_accounts_v4.py
+
+
 
 ## 🧩 特徵工程 (Feature Engineering)
 🏗️ 檔案：build_features_v4_behavior.py
