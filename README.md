@@ -11,12 +11,19 @@
 ## 🚀 專案流程架構
 flowchart TD
     A[dataset/acct_transaction.csv] --> B[build_features_v4_behavior.py]
+    
     B --> C[feature_data_v4/account_features.csv]
+    
     C --> D[prepare_trainset_balanced_v4.py]
+    
     D --> E[train_data_v4/train_data.csv]
+    
     E --> F[train_model_LGBM_v4.py]
+    
     F --> G[train_data_v4/lightgbm_model.pkl]
+    
     G --> H[predict_accounts_v4.py]
+    
     H --> I[results_v4/predict_for_submit_v4.csv]
 
 
@@ -41,11 +48,11 @@ flowchart TD
 
 可測 1:2, 1:3, 1:5 觀察 Recall 提升效果
 
-# GPU 加速訓練
+GPU 加速訓練
 
 安裝 RAPIDS (cuDF + LightGBM-GPU)，可加速百倍
 
-# 閾值微調
+閾值微調
 
 測試 0.3~0.7 閾值對 precision/recall 平衡影響
 
